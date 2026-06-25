@@ -49,8 +49,9 @@ public class Persona  {
     }
     
     
-    public void calcularEdad(){
-        Period.between(fecha, LocalDate.now()).getYears();
+    public int calcularEdad(){
+      return  Period.between(fecha, LocalDate.now()).getYears();
+      
         
         
     }
