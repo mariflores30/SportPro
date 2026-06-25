@@ -26,8 +26,12 @@ public class Entrenador extends Persona {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+
+    public void setTiempoExperiencia(int tiempoExperiencia) {
+        this.tiempoExperiencia = tiempoExperiencia;
+    } 
     
-    public Entrenador(String nombre, LocalDate fecha, String telefono, String id) {
+    public Entrenador(String nombre, LocalDate fecha, String telefono, String id, String especialidad, int tiempoExperiencia) {
         super(nombre, fecha, telefono, id);
         this.especialidad= especialidad;
         this.tiempoExperiencia= tiempoExperiencia;
@@ -35,7 +39,7 @@ public class Entrenador extends Persona {
     @Override
     public String toString(){
         return "Nombre: "+nombre+"\nFecha Nacimiento: "+fecha+"\nTelefono: "+telefono+
-                "\nIdentificacion: "+id+"\nEspecialidad: "+especialidad+"Tiempo de Experiencia"+tiempoExperiencia;
+                "\nIdentificacion: "+id+"\nEspecialidad: "+especialidad+ "Tiempo de Experiencia: "+tiempoExperiencia;
     
     
 }
