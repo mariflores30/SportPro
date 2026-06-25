@@ -21,7 +21,7 @@ public class Persona  {
         return nombre;
     }
 
-    public LocalDate getFecha() {
+    public LocalDate getfecha() {
         return fecha;
     }
 
@@ -51,6 +51,8 @@ public class Persona  {
     
     public void calcularEdad(){
         Period.between(fecha, LocalDate.now()).getYears();
+        
+        
     }
     
     
