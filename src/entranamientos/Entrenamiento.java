@@ -4,21 +4,28 @@
  */
 package entranamientos;
 
+import disciplinas.Disciplina;
+import disciplinas.TipoCategoria;
+import disciplinas.TipoDisciplina;
+import entrenadores.Entrenador;
 import java.time.LocalDate;
-import java.time.LocalTime;
+import participantes.Participante;
 
 
 /**
  *
  * @author PC
  */
-public class Entrenamiento extends disciplina{
+public class Entrenamiento extends Disciplina {
     protected int horaInicio;
     protected int horaFinal;
     protected int minInicio;
     protected int minfinal;
     protected LocalDate fecha;
     protected double duracion;
+    
+    
+    
 
     public LocalDate getFecha() {
         return fecha;
@@ -28,7 +35,7 @@ public class Entrenamiento extends disciplina{
         return horaInicio;
     }
 
-    public String getDuracion() {
+    public double getDuracion() {
         return duracion;
     }
 
@@ -46,9 +53,15 @@ public class Entrenamiento extends disciplina{
         return minfinal;
     }
 
-    
-    
-    public Entrenamiento(int horaInicio, int horaFinal, int minInicio, int minfinal, LocalDate fecha, double duracion) {
+    @Override
+    public TipoDisciplina getNombre() {
+        return super.getNombre(); 
+    }
+
+   
+
+    public Entrenamiento(int horaInicio, int horaFinal, int minInicio, int minfinal, LocalDate fecha, double duracion, TipoDisciplina nombre, TipoCategoria categoria, int capacidadMaxima, Entrenador[] entrenadores, Participante[] participantes, Entrenamiento[] entrenamientos) {
+        super(nombre, categoria, capacidadMaxima, entrenadores, participantes, entrenamientos);
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
         this.minInicio = minInicio;
@@ -56,6 +69,10 @@ public class Entrenamiento extends disciplina{
         this.fecha = fecha;
         this.duracion = duracion;
     }
+
+    
+    
+   
     
     
     
@@ -78,7 +95,9 @@ public class Entrenamiento extends disciplina{
                 "/n minInicio=" + minInicio + 
                 "/n minfinal=" + minfinal +
                 "/n fecha=" + fecha + 
-                "/n duracion=" + duracion + '}';
+                "/n duracion=" + duracion + 
+                "/n disciplina= "+ getNombre()+
+                "}";
     }
     
     
