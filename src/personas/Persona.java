@@ -5,13 +5,13 @@
 package personas;
 
 import java.time.LocalDate;
-
+import java.time.Period;
 
 /**
  *
  * @author PC
  */
-public class Persona {
+public class Persona  {
     protected String nombre;
     protected LocalDate fecha;
     protected String telefono;
@@ -49,7 +49,9 @@ public class Persona {
     }
     
     
-    
+    public void calcularEdad(){
+        Period.between(fecha, LocalDate.now()).getYears();
+    }
     
     
     
