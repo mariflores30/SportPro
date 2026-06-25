@@ -4,11 +4,100 @@
  */
 package entranamientos;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
 /**
  *
  * @author PC
  */
 public class Entrenamiento extends disciplina{
+    protected int horaInicio;
+    protected int horaFinal;
+    protected int minInicio;
+    protected int minfinal;
+    protected LocalDate fecha;
+    protected double duracion;
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public int getHoraInicio() {
+        return horaInicio;
+    }
+
+    public String getDuracion() {
+        return duracion;
+    }
+
+    public void setFecha() {
+        this.fecha = fecha;
+    }
+    
+    public int getHoraFinal(){
+        return horaFinal;
+    }
+    public int getMinInicio(){
+        return minInicio;
+            }    
+    public int getMinfinal(){
+        return minfinal;
+    }
+
+    
+    
+    public Entrenamiento(int horaInicio, int horaFinal, int minInicio, int minfinal, LocalDate fecha, double duracion) {
+        this.horaInicio = horaInicio;
+        this.horaFinal = horaFinal;
+        this.minInicio = minInicio;
+        this.minfinal = minfinal;
+        this.fecha = fecha;
+        this.duracion = duracion;
+    }
+    
+    
+    
+    
+    
+    public void calcularDuracion(){
+        int inicio = horaInicio * 60 + minInicio;
+        int end = horaFinal * 60 + minfinal;
+         
+        duracion = end - inicio;
+        
+        
+        
+        
+    }
+
+    public String toString() {
+        return "Entrenamiento{ horaInicio=" + horaInicio + 
+                "/n horaFinal=" + horaFinal + 
+                "/n minInicio=" + minInicio + 
+                "/n minfinal=" + minfinal +
+                "/n fecha=" + fecha + 
+                "/n duracion=" + duracion + '}';
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
   
     
